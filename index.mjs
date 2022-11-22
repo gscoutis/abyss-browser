@@ -15,13 +15,8 @@ const bareServer = createBareServer('/bare/', {
 	},
 });
 
-// The static root is usually relative to the main script in projects that use the Bare server.
-// ie. if static.js is at /src/static.js, public will be /public/
-// ideally, you will point the public directory relative to the current working directory
-// serveStatic('./public/')
-// This would ignore the relative location of static.js
 const serve = serveStatic(
-	fileURLToPath(new URL('../public/', import.meta.url)),
+	fileURLToPath(new URL('./public/', import.meta.url)),
 	{
 		fallthrough: false,
 	}
@@ -49,7 +44,7 @@ httpServer.on('upgrade', (req, socket, head) => {
 });
 
 httpServer.on('listening', () => {
-	console.log('HTTP server listening');
+	console.log('Arc Browser running on port 8080');
 });
 
 httpServer.listen({
