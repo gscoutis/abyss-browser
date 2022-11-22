@@ -44,7 +44,7 @@ httpServer.on('upgrade', (req, socket, head) => {
 });
 
 httpServer.on('listening', () => {
-	console.log('Arc Browser running on port 8080');
+	console.log('Abyss Browser running on port 8080');
 });
 
 httpServer.listen({
