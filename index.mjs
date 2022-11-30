@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import serveStatic from 'serve-static';
 
 const httpServer = createServer();
-
+console.log("Running");
 // Run the Bare server in the /bare/ namespace. This will prevent conflicts between the static files and the bare server.
 const bareServer = createBareServer('/bare/', {
 	logErrors: false,
