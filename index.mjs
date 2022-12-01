@@ -6,11 +6,10 @@ import cluster from 'cluster';
 import * as dotenv from 'dotenv'
 dotenv.config()
 const httpServer = createServer();
-console.log("Running");
 
 const numCPUs = process.env.MAXCPUS;
 if(cluster.isMaster){
-console.log("Master-Cluster-Running");
+console.log("Running");
 	for(let i = 0; i < numCPUs; i++){
 	cluster.fork();
 	}
