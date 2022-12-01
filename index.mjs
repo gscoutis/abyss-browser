@@ -2,6 +2,7 @@ import createBareServer from '@tomphttp/bare-server-node';
 import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
 import serveStatic from 'serve-static';
+import cluster from 'cluster';
 import * as dotenv from 'dotenv'
 dotenv.config()
 const httpServer = createServer();
